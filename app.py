@@ -8,6 +8,7 @@ CORS(app, origins="https://luongtranbaoanhbirthday.netlify.app", supports_creden
 
 # Kết nối MongoDB Atlas
 uri = "mongodb+srv://nguyenxuanthanh1112010:<qIH3VyU7emvcYBFe>@cluster0.4s8ij9x.mongodb.net/?appName=Cluster0"
+client = MongoClient(uri)
 db = client["comment_db"]
 collection = db["comments"]
 
