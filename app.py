@@ -82,7 +82,7 @@ def post_comment():
     }
 
     result = collection.insert_one(doc)
-    new_doc = collection.find_one({"_id": result.inserted_id}) 
+    new_doc = collection.find_one({"_id": result.inserted_id})
     return jsonify({"status": "ok", "data": serialize_doc(new_doc)}), 201
 
 # POST a reply to a comment by comment id (ObjectId string)
