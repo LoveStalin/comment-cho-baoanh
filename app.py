@@ -14,7 +14,7 @@ collection = db["comments"]
 
 @app.route("/")
 def home():
-    return "API đang chạy rồi nè! 🥳"
+    return "API đang chạy rồi ông ơi!"
 
 # API lấy comment
 @app.route("/comments", methods=["GET"])
