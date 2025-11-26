@@ -133,3 +133,5 @@ def get_comment(comment_id):
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 3000))
     app.run(host="0.0.0.0", port=port, debug=(os.getenv("FLASK_DEBUG","1")=="1"))
+
+app.config["DEBUG"] = True
