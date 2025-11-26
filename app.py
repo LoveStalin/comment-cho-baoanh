@@ -10,16 +10,16 @@ from datetime import datetime
 # load .env
 load_dotenv()
 
-MONGO_URI = os.getenv("mongodb+srv://nguyenxuanthanh1112010:qIH3VyU7emvcYBFe@cluster0.4s8ij9x.mongodb.net/?appName=Cluster0")  # MongoDB connection string
-OWNER_EMAIL = os.getenv("nguyenxuanthanh916@gmail.com")  # email để gửi thông báo (nếu dùng)
+MONGO_URI = os.getenv("MONGO_URI")  # MongoDB connection string
+OWNER_EMAIL = os.getenv("OWNER_EMAIL")  # email để gửi thông báo (nếu dùng)
 
 if not MONGO_URI:
     raise RuntimeError("MONGO_URI environment variable not set. Please create .env with MONGO_URI.")
 
 app = Flask(__name__)
 # CORS: allow your frontend origin (safer) or '*' for dev
-FRONTEND_ORIGINS = os.getenv("FRONTEND_ORIGINS", "https://luongtranbaoanhbirthday.netlify.app")
-if FRONTEND_ORIGINS.strip() == "https://luongtranbaoanhbirthday.netlify.app":
+FRONTEND_ORIGINS = os.getenv("FRONTEND_ORIGINS", "*")
+if FRONTEND_ORIGINS.strip() == "*":
     CORS(app, supports_credentials=True)
 else:
     # support comma-separated list
