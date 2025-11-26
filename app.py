@@ -28,7 +28,7 @@ else:
 
 # Mongo connect
 client = MongoClient(MONGO_URI)
-db = client.get_default_database() if client.get_default_database() else client["comment_db"]
+db = client["comment_db"]
 collection = db["comments"]
 
 # helpers
